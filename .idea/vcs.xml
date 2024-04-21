@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cards" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/comps" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pages" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/password-generator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pipes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/typing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/wsearch" vcs="Git" />
+  </component>
+</project>

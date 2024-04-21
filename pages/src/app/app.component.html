@@ -1,0 +1,34 @@
+<nav class="p-3">
+  <ul class="flex justify-center">
+    <li class=" border-slate-400 border-y border hover:bg-blue-300"
+      [ngClass]="{'hover:bg-white cursor-not-allowed text-slate-400' : currentPage === 0}" (click)="prevPage()">
+      <a class="p-3">Prev</a>
+    </li>
+
+    <ng-container *appTimes="images.length;let i = index" >
+      <li 
+      *ngIf="checkWindowIndex(i)"
+      class="border-slate-400 border-y border-r hover:bg-blue-300"
+        [ngClass]="{
+        'bg-blue-300': i === currentPage,
+      }">
+        <a class="p-3 cursor-pointer" (click)="goToPage(i)">{{ i + 1 }}</a>
+      </li>
+    </ng-container>
+    <li class=" border-slate-400 border-y border-r hover:bg-blue-300"
+      [ngClass]="{'hover:bg-white cursor-not-allowed text-slate-400' : currentPage === images.length - 1}"
+      (click)="nextPage()">
+      <a class="p-3 cursor-pointer">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<div>
+  <h1>{{ images[currentPage].title }}</h1>
+  <img [src]="images[currentPage].url" [alt]="images[currentPage].title" />
+</div>
+
+
+<ul *appTimes="5">
+  <li>Hi there</li>
+</ul>

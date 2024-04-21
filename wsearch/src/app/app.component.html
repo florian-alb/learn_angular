@@ -1,0 +1,4 @@
+<div class="container mx-auto">
+    <app-search-bar (submited)="onTerm($event)"></app-search-bar>
+    <app-page-list [pages]="pages" *ngIf="pages.length > 0"></app-page-list>
+</div>

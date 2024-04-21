@@ -1,0 +1,9 @@
+<div class="container w-full p-10">
+  <h1 class="text-3xl my-4">Payement form</h1>
+  <app-form-output
+  *ngFor="let form of forms"
+  [formType]="form.formType"
+  [label]="form.label"
+  [pipe]="form.pipe"
+  />
+</div>

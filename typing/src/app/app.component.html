@@ -1,0 +1,15 @@
+<div class="container flex justify-center">
+  <div class="border rounded p-5">
+    <h1 class="text-2xl text-center mb-3">Text Speed challenge</h1>
+    <p class="text-center">
+      <span *ngFor="let letter of randomText.split('');let i = index" [style]="getColor(letter, enteredText[i])" >{{letter}}</span>
+    </p>
+    <div>
+      <input (input)="validateText($event!)" class="rounded border-black border w-full my-3 p-1"/>
+    </div>
+    <div class="grid place-items-center" *ngIf="isWin()">
+      <h1 class="text-center text-xl mb-3">Success !</h1>
+      <button (click)="tryAgain()" class="bg-blue-500 text-white rounded px-3 py-1 hover:bg-blue-700">Try again</button>
+    </div>
+  </div>
+</div>

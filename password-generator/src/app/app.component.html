@@ -1,0 +1,35 @@
+<div class="container items-center flex flex-col m-4">
+  <div class="box p-6 rounded shadow-lg border">
+    <h1 class="text-3xl text-center mb-4">Password Generator</h1>
+    <div class="mb-2 w-full">
+      <label for="length" class="block">Length</label>
+      <input id="length" class="border rounded w-full" (input)="onChangeLength($event!)" />
+    </div>
+
+    <div class="flex items-center mb-1">
+      <input (change)="onChangeUseLetters()" id="use-letters" type="checkbox">
+      <label for="use-letters" class="ms-2">Use letters</label>
+    </div>
+
+    <div class="flex items-center mb-1">
+      <input id="use-numbers" (change)="onChangeUseNumbers()" type="checkbox" />
+      <label for="use-numbers" class="ms-2">Use numbers</label>
+    </div>
+
+    <div class="flex items-center mb-1">
+      <input id="use-symbols" (change)="onChangeUseSymbols()" type="checkbox" />
+      <label for="use-symbols" class="ms-2">Use symbols</label>
+    </div>
+
+    <div>
+      <button [disabled]="!(length && (useSymbols || useNumbers || useLetters))"
+        class="rounded bg-blue-500 text-white w-full px-1 py-2 mt-2 disabled:bg-blue-200 hover:bg-blue-700"
+        (click)="onButtonClick()">Generate</button>
+    </div>
+
+    <div class="mt-3 w-full" *ngIf="password">
+      <label for="length" class="block">Your Password</label>
+      <input id="length" class="border rounded w-full" [value]="password" />
+    </div>
+  </div>
+</div>

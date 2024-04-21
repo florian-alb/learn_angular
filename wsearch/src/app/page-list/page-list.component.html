@@ -1,0 +1,36 @@
+<div class="relative border rounded table-auto">
+    <table class="w-full text-sm text-left rtl:text-right">
+        <thead class="uppercase bg-gray-50 dark:bg-gray-700">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Title
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Word Count
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Snippet
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    <span class="sr-only">View article</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let page of pages"
+                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
+                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{page.title}}
+                </td>
+                <td class="px-6 py-4">{{page.wordcount}}</td>
+                <td class="px-6 py-4" [innerHTML]="page.snippet"></td>
+                <td class="px-6 py-4 text-right">
+                    <a [href]="'https://en.wikipedia.org?curid=' + page.pageid"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">View
+                        article
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

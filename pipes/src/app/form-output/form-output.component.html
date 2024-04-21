@@ -1,0 +1,12 @@
+<div class="flex justify-center w-full">
+    <div class="flex gap-2 justify-between w-full">
+      <div class="grid">
+        <label class="mb-1" for="name">{{ label }}</label>
+        <input (input)="onFormChange($event)" id="name" [type]="formType" class="border rounded"/>
+      </div>
+      <div>
+        <p class="font-bold">{{ label }}</p>
+        {{ output | dynamicPipe:pipe }}
+      </div>
+    </div>
+  </div>
