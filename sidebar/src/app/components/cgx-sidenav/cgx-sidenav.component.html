@@ -1,0 +1,19 @@
+<div class="flex flex-col justify-center ">
+  <a (click)="togleSidebar()" >
+    <img *ngIf="isSidenavOpen" class="w-40" src="../../../assets/full-logo.png" alt="logo-cgx">
+    <img *ngIf="!isSidenavOpen" class="w-10 mx-auto mt-4" src="../../assets/mini-logo.png" alt="logo-cgx">
+  </a>
+  
+  <mat-list>
+    @for (item of menu; track menu) {
+      <mat-list-item *ngIf="isSidenavOpen">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        <div matListItemTitle>{{item.label}}</div>
+      </mat-list-item>
+
+      <mat-list-item *ngIf="!isSidenavOpen">
+        <mat-icon>{{item.icon}}</mat-icon>
+      </mat-list-item>
+    }
+  </mat-list>
+</div>
