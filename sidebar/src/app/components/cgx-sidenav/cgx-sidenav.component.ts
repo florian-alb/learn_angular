@@ -17,7 +17,7 @@ export interface Icons {
   styleUrl: './cgx-sidenav.component.css',
 })
 export class CgxSidenavComponent{
-  @Output() close = new EventEmitter<boolean>();
+  @Output() close = new EventEmitter();
 
   isSidenavOpen = true;
 

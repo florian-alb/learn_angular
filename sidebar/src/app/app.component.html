@@ -6,9 +6,9 @@
 
 <mat-sidenav-container class="h-screen">
   <mat-sidenav opened="open" class="w-14" mode="side" >
-    <app-cgx-sidenav></app-cgx-sidenav>
+    <app-cgx-sidenav (close)="togleSidenav()"></app-cgx-sidenav>
   </mat-sidenav>
-  <mat-sidenav-content class="p-6 ml-14">
-    content of ou app
+  <mat-sidenav-content class="p-6" [ngClass]="{' !ml-14': !isSidenavOpen}" >
+    <router-outlet />
   </mat-sidenav-content>
 </mat-sidenav-container>
